@@ -30,16 +30,22 @@ class SensorThread(threading.Thread):
         self.period = 1/acquisitionFrequency
         self.readValue = 0;
         self.lock = threading.Lock()
+        self._stop = False
 
     def run(self):
         while True:
             time.sleep(self.period)
             self.lock.acquire()
             self.readValue = self.acquire()
+            if self.stop:
+                self.lock.release()
+                return
             self.lock.release()
 
     def stop(self):
-        self._stop.set()
+        self.lock.acquire()
+        self._stop = True
+        self.lock.release()
 
     def read(self):
         self.lock.acquire()
