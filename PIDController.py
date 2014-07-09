@@ -18,6 +18,9 @@ class DiscreteController:
             kp = kwargs["kp"]
             self.numerator = [kp]
             self.denominator = [1]
+        elif "num" in kwargs and "den" in kwargs:
+            self.numerator = num
+            self.denominator = den
         self.inputValues = [0]*len(self.numerator)
         self.outputValues = [0]*len(self.denominator)
 
