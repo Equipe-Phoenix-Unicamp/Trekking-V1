@@ -1,0 +1,5 @@
+APPLICAÇÃO video.py
+
+O objetivo da aplicação é testar os algoritmos desenvolvidos pra achar objetos coloridos em tempo real em um stream de vídeo. No caso, o vídeo de dois porquinhos. Eles são achados pela cor, circulados e o maior recebe uma linha vertical por cima do mesmo.
+
+A aplicação mede o tempo médio para o algoritmo convergir com 5 iterações. Na máquina testada, deu 0.2 segundos.
