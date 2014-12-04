@@ -1,6 +1,6 @@
 class StateMachine:
     """The machine that will run the assigned States to it.
-A state name may not ever be 'stop', its a reserved keyword to stop the machine from executing"""
+A state name may not ever be 'stop', its a reserved keyword to stop the machine execution"""
     def __init__(self):
         self.states = {}
         self.args = {}
